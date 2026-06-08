@@ -6,7 +6,7 @@
  * 
  * Master Spreadsheet Configuration Requirements:
  * Must contain a sheet named:
- * 1. "VAL_ATRIBUTOS_05" (Contains standard project parameters mapped to project codes)
+ * 1. "VAL_PROJECT_ATTRIBUTES" (Contains standard project parameters mapped to project codes)
  */
 
 // URL of the Master Database spreadsheet
@@ -73,7 +73,7 @@ function revalidateCurrentSheetManual() {
   var masterHeaders = [];
   try {
       var ssMaster = SpreadsheetApp.openByUrl(MASTER_DB_URL);
-      var sheetMaster = ssMaster.getSheetByName("VAL_ATRIBUTOS_05");
+      var sheetMaster = ssMaster.getSheetByName("VAL_PROJECT_ATTRIBUTES");
       var masterData = sheetMaster.getDataRange().getValues();
       masterHeaders = masterData[0]; 
       
@@ -207,7 +207,7 @@ function doPost(e) {
     // Query Master Database for values
     try {
         var ssMaster = SpreadsheetApp.openByUrl(MASTER_DB_URL);
-        var sheetMaster = ssMaster.getSheetByName("VAL_ATRIBUTOS_05");
+        var sheetMaster = ssMaster.getSheetByName("VAL_PROJECT_ATTRIBUTES");
         var rangeMaster = sheetMaster.getDataRange();
         var masterData = rangeMaster.getValues();
         masterHeaders = masterData[0]; 

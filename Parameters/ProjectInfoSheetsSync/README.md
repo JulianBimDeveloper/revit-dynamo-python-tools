@@ -45,7 +45,7 @@ graph TD
 ## 🛠️ Setup & Deployment Instructions
 
 ### 1. Master Database Setup
-The Master Database Google Sheet must contain a tab named `VAL_ATRIBUTOS_05` where:
+The Master Database Google Sheet must contain a tab named `VAL_PROJECT_ATTRIBUTES` where:
 -   Column headers match the generic mapped parameters (e.g. `BIM_Client_Name`, `BIM_Project_Status`).
 -   One column must be named `BIM_Project_Code` (acts as the key search column).
 -   One row must match the standard project code configuration (defined as `MASTER_PROJECT_CODE` in the Apps Script).
