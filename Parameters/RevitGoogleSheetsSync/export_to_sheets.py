@@ -30,7 +30,9 @@ doc = DocumentManager.Instance.CurrentDBDocument
 try:
     # --- INPUTS ---
     # IN[0]: Google Sheets Web App Deployment URL
+    # IN[1]: Target Google Spreadsheet URL (dynamic sheet connection)
     url_web_app = str(IN[0]).strip()
+    target_spreadsheet_url = str(IN[1]).strip() if IN[1] is not None else ""
     project_guid = str(doc.ProjectInformation.UniqueId)
     
     # Collect all view-independent model elements
@@ -163,7 +165,8 @@ try:
             "uniqueId": str(element.UniqueId), 
             "family": family_name,
             "type": type_name,
-            "actuals": extracted_values
+            "actuals": extracted_values,
+            "targetSpreadsheetUrl": target_spreadsheet_url
         })
 
     # --- TRANSMIT DATA ---

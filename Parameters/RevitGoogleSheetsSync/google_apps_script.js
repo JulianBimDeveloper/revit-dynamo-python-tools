@@ -53,12 +53,19 @@ function updateDashboardManual() {
 // ============================================================================
 function doPost(e) {
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
     if (!e || !e.postData || !e.postData.contents) {
       return ContentService.createTextOutput("ERROR: Empty request body.");
     }
     
     var contents = JSON.parse(e.postData.contents);
+    var targetSpreadsheetUrl = contents[0].targetSpreadsheetUrl;
+    
+    var ss;
+    if (targetSpreadsheetUrl && targetSpreadsheetUrl !== "") {
+      ss = SpreadsheetApp.openByUrl(targetSpreadsheetUrl);
+    } else {
+      ss = SpreadsheetApp.getActiveSpreadsheet();
+    }
     
     // Open the master database spreadsheet
     var ssRef = SpreadsheetApp.openByUrl(MASTER_DB_URL);
