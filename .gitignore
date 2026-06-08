@@ -1,0 +1,39 @@
+# === Revit Backup Files ===
+*.00[0-9][0-9].rvt
+*.00[0-9][0-9].rfa
+*.[0-9][0-9][0-9][0-9].rvt
+*.[0-9][0-9][0-9][0-9].rfa
+*.slick
+
+# === Dynamo Backup and Temp Files ===
+*.bak
+*.dyn.bak
+*backup*.dyn
+*.tmp
+*.log
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+venv/
+env/
+ENV/
+
+# === IDEs and Editor configurations ===
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# === OS Files ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Office Temporary Files ===
+~$*
